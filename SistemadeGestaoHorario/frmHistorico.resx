@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>Sistema de Gestão de Horário
+
+Histórico do Aplicativo
+
+Nossos Comprimentos a você leitor que esta interessado em ler a historia do desenvolvimento do Aplicativo. 
+
+O principal motivo para se desenvolver este aplicativo, foi por causa da consciência em horas de entradas dos docentes nas salas de aula, durante vários anos o cinerário foi se repetindo, e com o aumento dos cursos, mais erram as conscidências das horas.
+
+No ano de 2017, já não tendo solução, porque a instituição havia trocado de Horário mais de 3x, a instituição decidiu aproximar-se aos estudantes do curso de Tecnologia de Informação do 3º Ano, referente ao mesmo, com um pedido de criação de um aplicativo, que gerasse um horário, evitando o máximo a consciência nas horas para os docentes na entrada das salas de aulas.
+
+De imediato a turma reagiu ao pedido da instituição, pois a turma possuí conhecimento minino no Desenho e Implementação Aplicações, aceitando assim o pedido sobre condições de pedido de orientadores. 
+Escolhendo de seguida alguns docentes, com conhecimento na área de programação, como orientadores para o desenvolvimento do aplicativo.
+
+Fases
+
+1ª Fase
+
+As 3 primeiras semanas apos a escolha dos orientadores, a equipe reuniu-se para se efectuar o estudando da logica do aplicativo, a principais funcionalidades do sistema.
+
+2ª Fase
+
+Após o término do estudo da logica do aplicativo e a identificação das principais funcionalidades do sistema, a equipe estudantil em coordenação com os orientadores, reúnem -se durante 1 semana para efecturar, a escolha dos Aplicativos e da linguagem de programação de que usariam para se poder desenvolver o aplicativo.
+
+Na semana de escolha dos aplicativos e da linguagem de programação, investigou-se em relação aos aplicativos e tipos de linguagens de programação que estão disponíveis na internet que poderiam facilitar o desenvolvimento do aplicativo.
+
+Aplicativos: (IDE) Microsoft Visual Studio 2015, (Database) Microsoft SqlServer Express 2012.
+
+Linguagem de programação: Visual Basic.
+
+3ª Fase
+
+Após a semana de escolha de aplicativos e da linguagem de programação, a equipe prosseguiu com o desenvolvimento do aplicativo.
+Com encontros nas 4Feiras e 6Feiras com os orientadores para ver a que passo se seguia e para tirar dúvidas em relação ao desenvolvimento do aplicativo.
+
+4ª Fase
+
+Durante 4 semanas de fase do desenvolvimento do aplicativo, a equipe prossegue com a apresentação do protótipo aos orientadores, para uma verificação se o sistema estava realmente a funcionar sem sobre saltos.
+Após os testes feitos no Aplicativo pelos orientadores, ouve uma grande satisfação por parte dos orientadores, pois o sistema possuía todos os requisitos mínimos para a minimização dos problemas em relação a duplicação de Horas para os docentes.
+… Continua
+
+Creditos: Osvaldo Artur Dionisio</value>
+  </data>
+</root>

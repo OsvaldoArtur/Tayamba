@@ -1,0 +1,1095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GestHorarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador_tb">
+          <Key>
+            <PropertyRef Name="idAdministrador" />
+          </Key>
+          <Property Name="idAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeCompleto" Type="varchar(max)" />
+          <Property Name="NomeUsuario" Type="varchar(max)" />
+          <Property Name="SenhaUsuario" Type="varchar(max)" />
+          <Property Name="DataRegistro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Ano_tb">
+          <Key>
+            <PropertyRef Name="idAno" />
+          </Key>
+          <Property Name="idAno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ano" Type="int" />
+        </EntityType>
+        <EntityType Name="Cadeira_tb">
+          <Key>
+            <PropertyRef Name="idCadeira" />
+          </Key>
+          <Property Name="idCadeira" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Cadeira" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Credito_Cadeira" Type="int" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="Semestre" Type="int" Nullable="false" />
+          <Property Name="idCurso" Type="int" Nullable="false" />
+          <Property Name="TipoCadeira" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Criar_Horario_tb">
+          <Key>
+            <PropertyRef Name="idHorario" />
+          </Key>
+          <Property Name="idHorario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idDia" Type="int" />
+          <Property Name="idDocente" Type="int" />
+          <Property Name="idCadeira" Type="int" />
+          <Property Name="idHoras" Type="int" />
+          <Property Name="idFaculdade" Type="int" />
+          <Property Name="idHorarioPorSemestre" Type="int" />
+        </EntityType>
+        <EntityType Name="Cusos_tb">
+          <Key>
+            <PropertyRef Name="idCurso" />
+          </Key>
+          <Property Name="idCurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Curso" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Duracao_Curso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento_tb">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Departamento" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Docente_tb">
+          <Key>
+            <PropertyRef Name="idDocente" />
+          </Key>
+          <Property Name="idDocente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Docente" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Formacao_Academica" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idDepartamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faculdade_tb">
+          <Key>
+            <PropertyRef Name="idFaculdade" />
+          </Key>
+          <Property Name="idFaculdade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Universidade" Type="varchar(max)" Nullable="false" />
+          <Property Name="Nome_Extensao" Type="varchar(max)" />
+          <Property Name="logotipo" Type="image" />
+        </EntityType>
+        <EntityType Name="Horario_tb">
+          <Key>
+            <PropertyRef Name="idHorarioPorSemana" />
+          </Key>
+          <Property Name="idHorarioPorSemana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ano" Type="int" />
+          <Property Name="Semestre" Type="int" />
+          <Property Name="idSala" Type="int" />
+          <Property Name="idPeriodo" Type="int" />
+          <Property Name="idCurso" Type="int" />
+          <Property Name="idAno" Type="int" />
+        </EntityType>
+        <EntityType Name="Horas_tb">
+          <Key>
+            <PropertyRef Name="idHoras" />
+          </Key>
+          <Property Name="Horas" Type="varchar" MaxLength="550" />
+          <Property Name="idPeriodo" Type="int" />
+          <Property Name="idHoras" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Licenca_tb">
+          <Key>
+            <PropertyRef Name="idLicenca" />
+          </Key>
+          <Property Name="idLicenca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dia" Type="varchar(max)" />
+          <Property Name="Mes" Type="varchar(max)" />
+          <Property Name="Ano" Type="varchar(max)" />
+          <Property Name="Expiration" Type="varchar(max)" />
+          <Property Name="ProductoKey" Type="varchar(max)" />
+          <Property Name="FullName" Type="varchar(max)" />
+          <Property Name="TypeLicenc" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Periodo_tb">
+          <Key>
+            <PropertyRef Name="idPeriodo" />
+          </Key>
+          <Property Name="idPeriodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_periodo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Salas_tb">
+          <Key>
+            <PropertyRef Name="idSala" />
+          </Key>
+          <Property Name="idSala" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Sala" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Semana_tb">
+          <Key>
+            <PropertyRef Name="idDia" />
+          </Key>
+          <Property Name="idDia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dia" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuario_tb">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeCompleto" Type="varchar(max)" />
+          <Property Name="NomeUsuario" Type="varchar(max)" />
+          <Property Name="SenhaUsuario" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GestHorario.dbo.View_Horario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Horario">
+          <Key>
+            <PropertyRef Name="idCriarHoriario" />
+            <PropertyRef Name="Nome_Cadeira" />
+            <PropertyRef Name="Nome_Docente" />
+            <PropertyRef Name="Nome_periodo" />
+            <PropertyRef Name="Nome_Curso" />
+            <PropertyRef Name="Dia" />
+            <PropertyRef Name="Nome_Sala" />
+            <PropertyRef Name="idHorarioPorSemana" />
+          </Key>
+          <Property Name="idCriarHoriario" Type="int" Nullable="false" />
+          <Property Name="Ano" Type="int" />
+          <Property Name="Semestre" Type="int" />
+          <Property Name="idSala" Type="int" />
+          <Property Name="idPeriodo" Type="int" />
+          <Property Name="idCurso" Type="int" />
+          <Property Name="idDia" Type="int" />
+          <Property Name="idDocente" Type="int" />
+          <Property Name="idCadeira" Type="int" />
+          <Property Name="idHoras" Type="int" />
+          <Property Name="idFaculdade" Type="int" />
+          <Property Name="Nome_Cadeira" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Nome_Docente" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Horas" Type="varchar" MaxLength="550" />
+          <Property Name="Nome_periodo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome_Curso" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Dia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome_Sala" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idHorarioPorSemestre" Type="int" />
+          <Property Name="idAno" Type="int" />
+          <Property Name="idHorarioPorSemana" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GestHorario.dbo.View_ListaHorario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_ListaHorario">
+          <Key>
+            <PropertyRef Name="idSala" />
+            <PropertyRef Name="Nome_Sala" />
+            <PropertyRef Name="idPeriodo" />
+            <PropertyRef Name="Nome_periodo" />
+            <PropertyRef Name="idCurso" />
+            <PropertyRef Name="Nome_Curso" />
+            <PropertyRef Name="idHorarioPorSemana" />
+          </Key>
+          <Property Name="Semestre" Type="int" />
+          <Property Name="Ano" Type="int" />
+          <Property Name="idSala" Type="int" Nullable="false" />
+          <Property Name="Nome_Sala" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPeriodo" Type="int" Nullable="false" />
+          <Property Name="Nome_periodo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCurso" Type="int" Nullable="false" />
+          <Property Name="Nome_Curso" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="idAno" Type="int" />
+          <Property Name="idHorarioPorSemana" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cadeira_tb_Cusos_tb">
+          <End Role="Cusos_tb" Type="Self.Cusos_tb" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cadeira_tb" Type="Self.Cadeira_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cusos_tb">
+              <PropertyRef Name="idCurso" />
+            </Principal>
+            <Dependent Role="Cadeira_tb">
+              <PropertyRef Name="idCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Cadeira">
+          <End Role="Cadeira_tb" Type="Self.Cadeira_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cadeira_tb">
+              <PropertyRef Name="idCadeira" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idCadeira" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Docente">
+          <End Role="Docente_tb" Type="Self.Docente_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docente_tb">
+              <PropertyRef Name="idDocente" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idDocente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Faculdade">
+          <End Role="Faculdade_tb" Type="Self.Faculdade_tb" Multiplicity="0..1" />
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculdade_tb">
+              <PropertyRef Name="idFaculdade" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idFaculdade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Semana">
+          <End Role="Semana_tb" Type="Self.Semana_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Semana_tb">
+              <PropertyRef Name="idDia" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idDia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_tb_Horario_tb">
+          <End Role="Horario_tb" Type="Self.Horario_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horario_tb">
+              <PropertyRef Name="idHorarioPorSemana" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idHorarioPorSemestre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Docente_Departamento">
+          <End Role="Departamento_tb" Type="Self.Departamento_tb" Multiplicity="1" />
+          <End Role="Docente_tb" Type="Self.Docente_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento_tb">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Docente_tb">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_tb_Periodo_tb">
+          <End Role="Periodo_tb" Type="Self.Periodo_tb" Multiplicity="0..1" />
+          <End Role="Horario_tb" Type="Self.Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Principal>
+            <Dependent Role="Horario_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_tb_Salas_tb">
+          <End Role="Salas_tb" Type="Self.Salas_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Horario_tb" Type="Self.Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salas_tb">
+              <PropertyRef Name="idSala" />
+            </Principal>
+            <Dependent Role="Horario_tb">
+              <PropertyRef Name="idSala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horas_tb_Periodo_tb">
+          <End Role="Periodo_tb" Type="Self.Periodo_tb" Multiplicity="0..1" />
+          <End Role="Horas_tb" Type="Self.Horas_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Principal>
+            <Dependent Role="Horas_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestHorarioModelStoreContainer">
+          <EntitySet Name="Administrador_tb" EntityType="Self.Administrador_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ano_tb" EntityType="Self.Ano_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cadeira_tb" EntityType="Self.Cadeira_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Criar_Horario_tb" EntityType="Self.Criar_Horario_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cusos_tb" EntityType="Self.Cusos_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamento_tb" EntityType="Self.Departamento_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Docente_tb" EntityType="Self.Docente_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faculdade_tb" EntityType="Self.Faculdade_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Horario_tb" EntityType="Self.Horario_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Horas_tb" EntityType="Self.Horas_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Licenca_tb" EntityType="Self.Licenca_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Periodo_tb" EntityType="Self.Periodo_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salas_tb" EntityType="Self.Salas_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Semana_tb" EntityType="Self.Semana_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario_tb" EntityType="Self.Usuario_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_Horario" EntityType="Self.View_Horario" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_Horario].[idCriarHoriario] AS [idCriarHoriario], 
+[View_Horario].[Ano] AS [Ano], 
+[View_Horario].[Semestre] AS [Semestre], 
+[View_Horario].[idSala] AS [idSala], 
+[View_Horario].[idPeriodo] AS [idPeriodo], 
+[View_Horario].[idCurso] AS [idCurso], 
+[View_Horario].[idDia] AS [idDia], 
+[View_Horario].[idDocente] AS [idDocente], 
+[View_Horario].[idCadeira] AS [idCadeira], 
+[View_Horario].[idHoras] AS [idHoras], 
+[View_Horario].[idFaculdade] AS [idFaculdade], 
+[View_Horario].[Nome_Cadeira] AS [Nome_Cadeira], 
+[View_Horario].[Nome_Docente] AS [Nome_Docente], 
+[View_Horario].[Horas] AS [Horas], 
+[View_Horario].[Nome_periodo] AS [Nome_periodo], 
+[View_Horario].[Nome_Curso] AS [Nome_Curso], 
+[View_Horario].[Dia] AS [Dia], 
+[View_Horario].[Nome_Sala] AS [Nome_Sala], 
+[View_Horario].[idHorarioPorSemestre] AS [idHorarioPorSemestre], 
+[View_Horario].[idAno] AS [idAno], 
+[View_Horario].[idHorarioPorSemana] AS [idHorarioPorSemana]
+FROM [dbo].[View_Horario] AS [View_Horario]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_ListaHorario" EntityType="Self.View_ListaHorario" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_ListaHorario].[Semestre] AS [Semestre], 
+[View_ListaHorario].[Ano] AS [Ano], 
+[View_ListaHorario].[idSala] AS [idSala], 
+[View_ListaHorario].[Nome_Sala] AS [Nome_Sala], 
+[View_ListaHorario].[idPeriodo] AS [idPeriodo], 
+[View_ListaHorario].[Nome_periodo] AS [Nome_periodo], 
+[View_ListaHorario].[idCurso] AS [idCurso], 
+[View_ListaHorario].[Nome_Curso] AS [Nome_Curso], 
+[View_ListaHorario].[idAno] AS [idAno], 
+[View_ListaHorario].[idHorarioPorSemana] AS [idHorarioPorSemana]
+FROM [dbo].[View_ListaHorario] AS [View_ListaHorario]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Cadeira_tb_Cusos_tb" Association="Self.FK_Cadeira_tb_Cusos_tb">
+            <End Role="Cusos_tb" EntitySet="Cusos_tb" />
+            <End Role="Cadeira_tb" EntitySet="Cadeira_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Cadeira" Association="Self.FK_Criar_Horario_Cadeira">
+            <End Role="Cadeira_tb" EntitySet="Cadeira_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Docente" Association="Self.FK_Criar_Horario_Docente">
+            <End Role="Docente_tb" EntitySet="Docente_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Faculdade" Association="Self.FK_Criar_Horario_Faculdade">
+            <End Role="Faculdade_tb" EntitySet="Faculdade_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Semana" Association="Self.FK_Criar_Horario_Semana">
+            <End Role="Semana_tb" EntitySet="Semana_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_tb_Horario_tb" Association="Self.FK_Criar_Horario_tb_Horario_tb">
+            <End Role="Horario_tb" EntitySet="Horario_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Docente_Departamento" Association="Self.FK_Docente_Departamento">
+            <End Role="Departamento_tb" EntitySet="Departamento_tb" />
+            <End Role="Docente_tb" EntitySet="Docente_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_tb_Periodo_tb" Association="Self.FK_Horario_tb_Periodo_tb">
+            <End Role="Periodo_tb" EntitySet="Periodo_tb" />
+            <End Role="Horario_tb" EntitySet="Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_tb_Salas_tb" Association="Self.FK_Horario_tb_Salas_tb">
+            <End Role="Salas_tb" EntitySet="Salas_tb" />
+            <End Role="Horario_tb" EntitySet="Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horas_tb_Periodo_tb" Association="Self.FK_Horas_tb_Periodo_tb">
+            <End Role="Periodo_tb" EntitySet="Periodo_tb" />
+            <End Role="Horas_tb" EntitySet="Horas_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GestHorarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador_tb">
+          <Key>
+            <PropertyRef Name="idAdministrador" />
+          </Key>
+          <Property Name="idAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCompleto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NomeUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SenhaUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DataRegistro" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Ano_tb">
+          <Key>
+            <PropertyRef Name="idAno" />
+          </Key>
+          <Property Name="idAno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ano" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Cadeira_tb">
+          <Key>
+            <PropertyRef Name="idCadeira" />
+          </Key>
+          <Property Name="idCadeira" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Cadeira" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Credito_Cadeira" Type="Int32" Nullable="false" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="Semestre" Type="Int32" Nullable="false" />
+          <Property Name="idCurso" Type="Int32" Nullable="false" />
+          <Property Name="TipoCadeira" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cusos_tb" Relationship="Self.FK_Cadeira_tb_Cusos_tb" FromRole="Cadeira_tb" ToRole="Cusos_tb" />
+          <NavigationProperty Name="Criar_Horario_tb" Relationship="Self.FK_Criar_Horario_Cadeira" FromRole="Cadeira_tb" ToRole="Criar_Horario_tb" />
+        </EntityType>
+        <EntityType Name="Criar_Horario_tb">
+          <Key>
+            <PropertyRef Name="idHorario" />
+          </Key>
+          <Property Name="idHorario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idDia" Type="Int32" />
+          <Property Name="idDocente" Type="Int32" />
+          <Property Name="idCadeira" Type="Int32" />
+          <Property Name="idHoras" Type="Int32" />
+          <Property Name="idFaculdade" Type="Int32" />
+          <Property Name="idHorarioPorSemestre" Type="Int32" />
+          <NavigationProperty Name="Cadeira_tb" Relationship="Self.FK_Criar_Horario_Cadeira" FromRole="Criar_Horario_tb" ToRole="Cadeira_tb" />
+          <NavigationProperty Name="Docente_tb" Relationship="Self.FK_Criar_Horario_Docente" FromRole="Criar_Horario_tb" ToRole="Docente_tb" />
+          <NavigationProperty Name="Faculdade_tb" Relationship="Self.FK_Criar_Horario_Faculdade" FromRole="Criar_Horario_tb" ToRole="Faculdade_tb" />
+          <NavigationProperty Name="Semana_tb" Relationship="Self.FK_Criar_Horario_Semana" FromRole="Criar_Horario_tb" ToRole="Semana_tb" />
+          <NavigationProperty Name="Horario_tb" Relationship="Self.FK_Criar_Horario_tb_Horario_tb" FromRole="Criar_Horario_tb" ToRole="Horario_tb" />
+        </EntityType>
+        <EntityType Name="Cusos_tb">
+          <Key>
+            <PropertyRef Name="idCurso" />
+          </Key>
+          <Property Name="idCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Curso" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Duracao_Curso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cadeira_tb" Relationship="Self.FK_Cadeira_tb_Cusos_tb" FromRole="Cusos_tb" ToRole="Cadeira_tb" />
+        </EntityType>
+        <EntityType Name="Departamento_tb">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Docente_tb" Relationship="Self.FK_Docente_Departamento" FromRole="Departamento_tb" ToRole="Docente_tb" />
+        </EntityType>
+        <EntityType Name="Docente_tb">
+          <Key>
+            <PropertyRef Name="idDocente" />
+          </Key>
+          <Property Name="idDocente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Docente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Formacao_Academica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Criar_Horario_tb" Relationship="Self.FK_Criar_Horario_Docente" FromRole="Docente_tb" ToRole="Criar_Horario_tb" />
+          <NavigationProperty Name="Departamento_tb" Relationship="Self.FK_Docente_Departamento" FromRole="Docente_tb" ToRole="Departamento_tb" />
+        </EntityType>
+        <EntityType Name="Faculdade_tb">
+          <Key>
+            <PropertyRef Name="idFaculdade" />
+          </Key>
+          <Property Name="idFaculdade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Universidade" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome_Extensao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="logotipo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Criar_Horario_tb" Relationship="Self.FK_Criar_Horario_Faculdade" FromRole="Faculdade_tb" ToRole="Criar_Horario_tb" />
+        </EntityType>
+        <EntityType Name="Horario_tb">
+          <Key>
+            <PropertyRef Name="idHorarioPorSemana" />
+          </Key>
+          <Property Name="idHorarioPorSemana" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ano" Type="Int32" />
+          <Property Name="Semestre" Type="Int32" />
+          <Property Name="idSala" Type="Int32" />
+          <Property Name="idPeriodo" Type="Int32" />
+          <Property Name="idCurso" Type="Int32" />
+          <Property Name="idAno" Type="Int32" />
+          <NavigationProperty Name="Criar_Horario_tb" Relationship="Self.FK_Criar_Horario_tb_Horario_tb" FromRole="Horario_tb" ToRole="Criar_Horario_tb" />
+          <NavigationProperty Name="Periodo_tb" Relationship="Self.FK_Horario_tb_Periodo_tb" FromRole="Horario_tb" ToRole="Periodo_tb" />
+          <NavigationProperty Name="Salas_tb" Relationship="Self.FK_Horario_tb_Salas_tb" FromRole="Horario_tb" ToRole="Salas_tb" />
+        </EntityType>
+        <EntityType Name="Horas_tb">
+          <Key>
+            <PropertyRef Name="idHoras" />
+          </Key>
+          <Property Name="Horas" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Name="idPeriodo" Type="Int32" />
+          <Property Name="idHoras" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Periodo_tb" Relationship="Self.FK_Horas_tb_Periodo_tb" FromRole="Horas_tb" ToRole="Periodo_tb" />
+        </EntityType>
+        <EntityType Name="Licenca_tb">
+          <Key>
+            <PropertyRef Name="idLicenca" />
+          </Key>
+          <Property Name="idLicenca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Mes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ano" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Expiration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductoKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TypeLicenc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Periodo_tb">
+          <Key>
+            <PropertyRef Name="idPeriodo" />
+          </Key>
+          <Property Name="idPeriodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Horario_tb" Relationship="Self.FK_Horario_tb_Periodo_tb" FromRole="Periodo_tb" ToRole="Horario_tb" />
+          <NavigationProperty Name="Horas_tb" Relationship="Self.FK_Horas_tb_Periodo_tb" FromRole="Periodo_tb" ToRole="Horas_tb" />
+        </EntityType>
+        <EntityType Name="Salas_tb">
+          <Key>
+            <PropertyRef Name="idSala" />
+          </Key>
+          <Property Name="idSala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Horario_tb" Relationship="Self.FK_Horario_tb_Salas_tb" FromRole="Salas_tb" ToRole="Horario_tb" />
+        </EntityType>
+        <EntityType Name="Semana_tb">
+          <Key>
+            <PropertyRef Name="idDia" />
+          </Key>
+          <Property Name="idDia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Criar_Horario_tb" Relationship="Self.FK_Criar_Horario_Semana" FromRole="Semana_tb" ToRole="Criar_Horario_tb" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario_tb">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCompleto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NomeUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SenhaUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Horario">
+          <Key>
+            <PropertyRef Name="idCriarHoriario" />
+            <PropertyRef Name="Nome_Cadeira" />
+            <PropertyRef Name="Nome_Docente" />
+            <PropertyRef Name="Nome_periodo" />
+            <PropertyRef Name="Nome_Curso" />
+            <PropertyRef Name="Dia" />
+            <PropertyRef Name="Nome_Sala" />
+            <PropertyRef Name="idHorarioPorSemana" />
+          </Key>
+          <Property Name="idCriarHoriario" Type="Int32" Nullable="false" />
+          <Property Name="Ano" Type="Int32" />
+          <Property Name="Semestre" Type="Int32" />
+          <Property Name="idSala" Type="Int32" />
+          <Property Name="idPeriodo" Type="Int32" />
+          <Property Name="idCurso" Type="Int32" />
+          <Property Name="idDia" Type="Int32" />
+          <Property Name="idDocente" Type="Int32" />
+          <Property Name="idCadeira" Type="Int32" />
+          <Property Name="idHoras" Type="Int32" />
+          <Property Name="idFaculdade" Type="Int32" />
+          <Property Name="Nome_Cadeira" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome_Docente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Horas" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Name="Nome_periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome_Curso" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome_Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idHorarioPorSemestre" Type="Int32" />
+          <Property Name="idAno" Type="Int32" />
+          <Property Name="idHorarioPorSemana" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="View_ListaHorario">
+          <Key>
+            <PropertyRef Name="idSala" />
+            <PropertyRef Name="Nome_Sala" />
+            <PropertyRef Name="idPeriodo" />
+            <PropertyRef Name="Nome_periodo" />
+            <PropertyRef Name="idCurso" />
+            <PropertyRef Name="Nome_Curso" />
+            <PropertyRef Name="idHorarioPorSemana" />
+          </Key>
+          <Property Name="Semestre" Type="Int32" />
+          <Property Name="Ano" Type="Int32" />
+          <Property Name="idSala" Type="Int32" Nullable="false" />
+          <Property Name="Nome_Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idPeriodo" Type="Int32" Nullable="false" />
+          <Property Name="Nome_periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idCurso" Type="Int32" Nullable="false" />
+          <Property Name="Nome_Curso" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idAno" Type="Int32" />
+          <Property Name="idHorarioPorSemana" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cadeira_tb_Cusos_tb">
+          <End Role="Cusos_tb" Type="Self.Cusos_tb" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cadeira_tb" Type="Self.Cadeira_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cusos_tb">
+              <PropertyRef Name="idCurso" />
+            </Principal>
+            <Dependent Role="Cadeira_tb">
+              <PropertyRef Name="idCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Cadeira">
+          <End Role="Cadeira_tb" Type="Self.Cadeira_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cadeira_tb">
+              <PropertyRef Name="idCadeira" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idCadeira" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Docente">
+          <End Role="Docente_tb" Type="Self.Docente_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docente_tb">
+              <PropertyRef Name="idDocente" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idDocente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Faculdade">
+          <End Role="Faculdade_tb" Type="Self.Faculdade_tb" Multiplicity="0..1" />
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculdade_tb">
+              <PropertyRef Name="idFaculdade" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idFaculdade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_Semana">
+          <End Role="Semana_tb" Type="Self.Semana_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Semana_tb">
+              <PropertyRef Name="idDia" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idDia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Criar_Horario_tb_Horario_tb">
+          <End Role="Horario_tb" Type="Self.Horario_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Criar_Horario_tb" Type="Self.Criar_Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horario_tb">
+              <PropertyRef Name="idHorarioPorSemana" />
+            </Principal>
+            <Dependent Role="Criar_Horario_tb">
+              <PropertyRef Name="idHorarioPorSemestre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Docente_Departamento">
+          <End Role="Departamento_tb" Type="Self.Departamento_tb" Multiplicity="1" />
+          <End Role="Docente_tb" Type="Self.Docente_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento_tb">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Docente_tb">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_tb_Periodo_tb">
+          <End Role="Periodo_tb" Type="Self.Periodo_tb" Multiplicity="0..1" />
+          <End Role="Horario_tb" Type="Self.Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Principal>
+            <Dependent Role="Horario_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horario_tb_Salas_tb">
+          <End Role="Salas_tb" Type="Self.Salas_tb" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Horario_tb" Type="Self.Horario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salas_tb">
+              <PropertyRef Name="idSala" />
+            </Principal>
+            <Dependent Role="Horario_tb">
+              <PropertyRef Name="idSala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horas_tb_Periodo_tb">
+          <End Role="Periodo_tb" Type="Self.Periodo_tb" Multiplicity="0..1" />
+          <End Role="Horas_tb" Type="Self.Horas_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Principal>
+            <Dependent Role="Horas_tb">
+              <PropertyRef Name="idPeriodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestHorarioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrador_tb" EntityType="Self.Administrador_tb" />
+          <EntitySet Name="Ano_tb" EntityType="Self.Ano_tb" />
+          <EntitySet Name="Cadeira_tb" EntityType="Self.Cadeira_tb" />
+          <EntitySet Name="Criar_Horario_tb" EntityType="Self.Criar_Horario_tb" />
+          <EntitySet Name="Cusos_tb" EntityType="Self.Cusos_tb" />
+          <EntitySet Name="Departamento_tb" EntityType="Self.Departamento_tb" />
+          <EntitySet Name="Docente_tb" EntityType="Self.Docente_tb" />
+          <EntitySet Name="Faculdade_tb" EntityType="Self.Faculdade_tb" />
+          <EntitySet Name="Horario_tb" EntityType="Self.Horario_tb" />
+          <EntitySet Name="Horas_tb" EntityType="Self.Horas_tb" />
+          <EntitySet Name="Licenca_tb" EntityType="Self.Licenca_tb" />
+          <EntitySet Name="Periodo_tb" EntityType="Self.Periodo_tb" />
+          <EntitySet Name="Salas_tb" EntityType="Self.Salas_tb" />
+          <EntitySet Name="Semana_tb" EntityType="Self.Semana_tb" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Usuario_tb" EntityType="Self.Usuario_tb" />
+          <EntitySet Name="View_Horario" EntityType="Self.View_Horario" />
+          <EntitySet Name="View_ListaHorario" EntityType="Self.View_ListaHorario" />
+          <AssociationSet Name="FK_Cadeira_tb_Cusos_tb" Association="Self.FK_Cadeira_tb_Cusos_tb">
+            <End Role="Cusos_tb" EntitySet="Cusos_tb" />
+            <End Role="Cadeira_tb" EntitySet="Cadeira_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Cadeira" Association="Self.FK_Criar_Horario_Cadeira">
+            <End Role="Cadeira_tb" EntitySet="Cadeira_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Docente" Association="Self.FK_Criar_Horario_Docente">
+            <End Role="Docente_tb" EntitySet="Docente_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Faculdade" Association="Self.FK_Criar_Horario_Faculdade">
+            <End Role="Faculdade_tb" EntitySet="Faculdade_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_Semana" Association="Self.FK_Criar_Horario_Semana">
+            <End Role="Semana_tb" EntitySet="Semana_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Criar_Horario_tb_Horario_tb" Association="Self.FK_Criar_Horario_tb_Horario_tb">
+            <End Role="Horario_tb" EntitySet="Horario_tb" />
+            <End Role="Criar_Horario_tb" EntitySet="Criar_Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Docente_Departamento" Association="Self.FK_Docente_Departamento">
+            <End Role="Departamento_tb" EntitySet="Departamento_tb" />
+            <End Role="Docente_tb" EntitySet="Docente_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_tb_Periodo_tb" Association="Self.FK_Horario_tb_Periodo_tb">
+            <End Role="Periodo_tb" EntitySet="Periodo_tb" />
+            <End Role="Horario_tb" EntitySet="Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horario_tb_Salas_tb" Association="Self.FK_Horario_tb_Salas_tb">
+            <End Role="Salas_tb" EntitySet="Salas_tb" />
+            <End Role="Horario_tb" EntitySet="Horario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horas_tb_Periodo_tb" Association="Self.FK_Horas_tb_Periodo_tb">
+            <End Role="Periodo_tb" EntitySet="Periodo_tb" />
+            <End Role="Horas_tb" EntitySet="Horas_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GestHorarioModelStoreContainer" CdmEntityContainer="GestHorarioEntities">
+          <EntitySetMapping Name="Administrador_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Administrador_tb">
+              <MappingFragment StoreEntitySet="Administrador_tb">
+                <ScalarProperty Name="idAdministrador" ColumnName="idAdministrador" />
+                <ScalarProperty Name="NomeCompleto" ColumnName="NomeCompleto" />
+                <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+                <ScalarProperty Name="SenhaUsuario" ColumnName="SenhaUsuario" />
+                <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ano_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Ano_tb">
+              <MappingFragment StoreEntitySet="Ano_tb">
+                <ScalarProperty Name="idAno" ColumnName="idAno" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cadeira_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Cadeira_tb">
+              <MappingFragment StoreEntitySet="Cadeira_tb">
+                <ScalarProperty Name="idCadeira" ColumnName="idCadeira" />
+                <ScalarProperty Name="Nome_Cadeira" ColumnName="Nome_Cadeira" />
+                <ScalarProperty Name="Credito_Cadeira" ColumnName="Credito_Cadeira" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="TipoCadeira" ColumnName="TipoCadeira" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Criar_Horario_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Criar_Horario_tb">
+              <MappingFragment StoreEntitySet="Criar_Horario_tb">
+                <ScalarProperty Name="idHorario" ColumnName="idHorario" />
+                <ScalarProperty Name="idDia" ColumnName="idDia" />
+                <ScalarProperty Name="idDocente" ColumnName="idDocente" />
+                <ScalarProperty Name="idCadeira" ColumnName="idCadeira" />
+                <ScalarProperty Name="idHoras" ColumnName="idHoras" />
+                <ScalarProperty Name="idFaculdade" ColumnName="idFaculdade" />
+                <ScalarProperty Name="idHorarioPorSemestre" ColumnName="idHorarioPorSemestre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cusos_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Cusos_tb">
+              <MappingFragment StoreEntitySet="Cusos_tb">
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="Nome_Curso" ColumnName="Nome_Curso" />
+                <ScalarProperty Name="Duracao_Curso" ColumnName="Duracao_Curso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamento_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Departamento_tb">
+              <MappingFragment StoreEntitySet="Departamento_tb">
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="Nome_Departamento" ColumnName="Nome_Departamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Docente_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Docente_tb">
+              <MappingFragment StoreEntitySet="Docente_tb">
+                <ScalarProperty Name="idDocente" ColumnName="idDocente" />
+                <ScalarProperty Name="Nome_Docente" ColumnName="Nome_Docente" />
+                <ScalarProperty Name="Formacao_Academica" ColumnName="Formacao_Academica" />
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faculdade_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Faculdade_tb">
+              <MappingFragment StoreEntitySet="Faculdade_tb">
+                <ScalarProperty Name="idFaculdade" ColumnName="idFaculdade" />
+                <ScalarProperty Name="Nome_Universidade" ColumnName="Nome_Universidade" />
+                <ScalarProperty Name="Nome_Extensao" ColumnName="Nome_Extensao" />
+                <ScalarProperty Name="logotipo" ColumnName="logotipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horario_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Horario_tb">
+              <MappingFragment StoreEntitySet="Horario_tb">
+                <ScalarProperty Name="idHorarioPorSemana" ColumnName="idHorarioPorSemana" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+                <ScalarProperty Name="idSala" ColumnName="idSala" />
+                <ScalarProperty Name="idPeriodo" ColumnName="idPeriodo" />
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="idAno" ColumnName="idAno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horas_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Horas_tb">
+              <MappingFragment StoreEntitySet="Horas_tb">
+                <ScalarProperty Name="Horas" ColumnName="Horas" />
+                <ScalarProperty Name="idPeriodo" ColumnName="idPeriodo" />
+                <ScalarProperty Name="idHoras" ColumnName="idHoras" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Licenca_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Licenca_tb">
+              <MappingFragment StoreEntitySet="Licenca_tb">
+                <ScalarProperty Name="idLicenca" ColumnName="idLicenca" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+                <ScalarProperty Name="ProductoKey" ColumnName="ProductoKey" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="TypeLicenc" ColumnName="TypeLicenc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periodo_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Periodo_tb">
+              <MappingFragment StoreEntitySet="Periodo_tb">
+                <ScalarProperty Name="idPeriodo" ColumnName="idPeriodo" />
+                <ScalarProperty Name="Nome_periodo" ColumnName="Nome_periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salas_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Salas_tb">
+              <MappingFragment StoreEntitySet="Salas_tb">
+                <ScalarProperty Name="idSala" ColumnName="idSala" />
+                <ScalarProperty Name="Nome_Sala" ColumnName="Nome_Sala" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Semana_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Semana_tb">
+              <MappingFragment StoreEntitySet="Semana_tb">
+                <ScalarProperty Name="idDia" ColumnName="idDia" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GestHorarioModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario_tb">
+            <EntityTypeMapping TypeName="GestHorarioModel.Usuario_tb">
+              <MappingFragment StoreEntitySet="Usuario_tb">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="NomeCompleto" ColumnName="NomeCompleto" />
+                <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+                <ScalarProperty Name="SenhaUsuario" ColumnName="SenhaUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Horario">
+            <EntityTypeMapping TypeName="GestHorarioModel.View_Horario">
+              <MappingFragment StoreEntitySet="View_Horario">
+                <ScalarProperty Name="idCriarHoriario" ColumnName="idCriarHoriario" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+                <ScalarProperty Name="idSala" ColumnName="idSala" />
+                <ScalarProperty Name="idPeriodo" ColumnName="idPeriodo" />
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="idDia" ColumnName="idDia" />
+                <ScalarProperty Name="idDocente" ColumnName="idDocente" />
+                <ScalarProperty Name="idCadeira" ColumnName="idCadeira" />
+                <ScalarProperty Name="idHoras" ColumnName="idHoras" />
+                <ScalarProperty Name="idFaculdade" ColumnName="idFaculdade" />
+                <ScalarProperty Name="Nome_Cadeira" ColumnName="Nome_Cadeira" />
+                <ScalarProperty Name="Nome_Docente" ColumnName="Nome_Docente" />
+                <ScalarProperty Name="Horas" ColumnName="Horas" />
+                <ScalarProperty Name="Nome_periodo" ColumnName="Nome_periodo" />
+                <ScalarProperty Name="Nome_Curso" ColumnName="Nome_Curso" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Nome_Sala" ColumnName="Nome_Sala" />
+                <ScalarProperty Name="idHorarioPorSemestre" ColumnName="idHorarioPorSemestre" />
+                <ScalarProperty Name="idAno" ColumnName="idAno" />
+                <ScalarProperty Name="idHorarioPorSemana" ColumnName="idHorarioPorSemana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_ListaHorario">
+            <EntityTypeMapping TypeName="GestHorarioModel.View_ListaHorario">
+              <MappingFragment StoreEntitySet="View_ListaHorario">
+                <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="idSala" ColumnName="idSala" />
+                <ScalarProperty Name="Nome_Sala" ColumnName="Nome_Sala" />
+                <ScalarProperty Name="idPeriodo" ColumnName="idPeriodo" />
+                <ScalarProperty Name="Nome_periodo" ColumnName="Nome_periodo" />
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="Nome_Curso" ColumnName="Nome_Curso" />
+                <ScalarProperty Name="idAno" ColumnName="idAno" />
+                <ScalarProperty Name="idHorarioPorSemana" ColumnName="idHorarioPorSemana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

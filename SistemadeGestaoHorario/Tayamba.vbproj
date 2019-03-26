@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88432DB4-B7D2-4C0D-92DA-DBF06E0CC758}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SistemadeGestaoHorario.My.MyApplication</StartupObject>
+    <RootNamespace>SistemadeGestaoHorario</RootNamespace>
+    <AssemblyName>SistemadeGestaoHorario</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SistemadeGestaoHorario.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SistemadeGestaoHorario.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Curriculum.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>SistemadeGestaoHorario.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>SistemadeGestaoHorario.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="eCryptography">
+      <HintPath>..\packages\Eramake.eCryptography.1.1.6\lib\net45\eCryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FoxLearn.License, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FoxLearn.License.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSuite">
+      <HintPath>..\packages\MetroSuite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.10.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.10.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.10.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.25\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador\frmAddAdministrator.Designer.vb">
+      <DependentUpon>frmAddAdministrator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmAddAdministrator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmAdicionarNovosUsuarios.Designer.vb">
+      <DependentUpon>frmAdicionarNovosUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmAdicionarNovosUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmFaculdadess.Designer.vb">
+      <DependentUpon>frmFaculdadess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmFaculdadess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmGerenciaAdministradores.Designer.vb">
+      <DependentUpon>frmGerenciaAdministradores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmGerenciaAdministradores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmLoginn.Designer.vb">
+      <DependentUpon>frmLoginn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmLoginn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmMenu.Designer.vb">
+      <DependentUpon>frmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmResertarSenha.Designer.vb">
+      <DependentUpon>frmResertarSenha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmResertarSenha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Referencia.vb" />
+    <Compile Include="Formularios\frmAddUser.Designer.vb">
+      <DependentUpon>frmAddUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmAddUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadeira.Designer.vb">
+      <DependentUpon>frmCadeira.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCadeira.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadeiraAdd.Designer.vb">
+      <DependentUpon>frmCadeiraAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCadeiraAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCriarHorario.Designer.vb">
+      <DependentUpon>frmCriarHorario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCriarHorario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCursos.Designer.vb">
+      <DependentUpon>frmCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDepartamento.Designer.vb">
+      <DependentUpon>frmDepartamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmDepartamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDocente.Designer.vb">
+      <DependentUpon>frmDocente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmDocente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEscolhadeDocente.Designer.vb">
+      <DependentUpon>frmEscolhadeDocente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmEscolhadeDocente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFaculdade.Designer.vb">
+      <DependentUpon>frmFaculdade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmFaculdade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmHoras.Designer.vb">
+      <DependentUpon>frmHoras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmHoras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImprimirHorario.Designer.vb">
+      <DependentUpon>frmImprimirHorario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImprimirHorario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmModelo.Designer.vb">
+      <DependentUpon>frmModelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmModelo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMudarSenhaUsuario.Designer.vb">
+      <DependentUpon>frmMudarSenhaUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMudarSenhaUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPeriodo.Designer.vb">
+      <DependentUpon>frmPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSalas.Designer.vb">
+      <DependentUpon>frmSalas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmSalas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSemana.Designer.vb">
+      <DependentUpon>frmSemana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmSemana.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuario.Designer.vb">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjuda.Designer.vb">
+      <DependentUpon>frmAjuda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAjuda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorico.Designer.vb">
+      <DependentUpon>frmHistorico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistorico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorarios.Designer.vb">
+      <DependentUpon>frmHorarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHorarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaHorarios.Designer.vb">
+      <DependentUpon>frmListaHorarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaHorarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSobre.Designer.vb">
+      <DependentUpon>frmSobre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSobre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenciar\frmGerar.Designer.vb">
+      <DependentUpon>frmGerar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Licenciar\frmGerar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenciar\frmRegistrar.Designer.vb">
+      <DependentUpon>frmRegistrar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Licenciar\frmRegistrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenciar\frmSobreLicenca.Designer.vb">
+      <DependentUpon>frmSobreLicenca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Licenciar\frmSobreLicenca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Administrador_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Ano_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cadeira_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Criar_Horario_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cusos_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Departamento_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Docente_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Faculdade_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Horario_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Horas_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Licenca_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Modelo.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Modelo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Modelo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Periodo_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Salas_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Semana_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sysdiagrams.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Usuario_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\View_Horario.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\View_ListaHorario.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Outras ideias\frmEntradaHorario.Designer.vb">
+      <DependentUpon>frmEntradaHorario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outras ideias\frmEntradaHorario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outras ideias\frmHoorariosCursos.Designer.vb">
+      <DependentUpon>frmHoorariosCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outras ideias\frmHoorariosCursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioFinal\frmRelatorioHorarioCurso.Designer.vb">
+      <DependentUpon>frmRelatorioHorarioCurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioFinal\frmRelatorioHorarioCurso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\frmRelatorio.Designer.vb">
+      <DependentUpon>frmRelatorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\frmRelatorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\frmRelatorioDocente.Designer.vb">
+      <DependentUpon>frmRelatorioDocente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\frmRelatorioDocente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TesteRelatorio\frmRelatorioTeste.Designer.vb">
+      <DependentUpon>frmRelatorioTeste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TesteRelatorio\frmRelatorioTeste.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Administrador\frmAddAdministrator.resx">
+      <DependentUpon>frmAddAdministrator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmAdicionarNovosUsuarios.resx">
+      <DependentUpon>frmAdicionarNovosUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmFaculdadess.resx">
+      <DependentUpon>frmFaculdadess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmGerenciaAdministradores.resx">
+      <DependentUpon>frmGerenciaAdministradores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmLoginn.resx">
+      <DependentUpon>frmLoginn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmMenu.resx">
+      <DependentUpon>frmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmResertarSenha.resx">
+      <DependentUpon>frmResertarSenha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAddUser.resx">
+      <DependentUpon>frmAddUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadeira.resx">
+      <DependentUpon>frmCadeira.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadeiraAdd.resx">
+      <DependentUpon>frmCadeiraAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCriarHorario.resx">
+      <DependentUpon>frmCriarHorario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCursos.resx">
+      <DependentUpon>frmCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDepartamento.resx">
+      <DependentUpon>frmDepartamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDocente.resx">
+      <DependentUpon>frmDocente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEscolhadeDocente.resx">
+      <DependentUpon>frmEscolhadeDocente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmFaculdade.resx">
+      <DependentUpon>frmFaculdade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmHoras.resx">
+      <DependentUpon>frmHoras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImprimirHorario.resx">
+      <DependentUpon>frmImprimirHorario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmModelo.resx">
+      <DependentUpon>frmModelo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMudarSenhaUsuario.resx">
+      <DependentUpon>frmMudarSenhaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPeriodo.resx">
+      <DependentUpon>frmPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmSalas.resx">
+      <DependentUpon>frmSalas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmSemana.resx">
+      <DependentUpon>frmSemana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuario.resx">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjuda.resx">
+      <DependentUpon>frmAjuda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorico.resx">
+      <DependentUpon>frmHistorico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorarios.resx">
+      <DependentUpon>frmHorarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaHorarios.resx">
+      <DependentUpon>frmListaHorarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSobre.resx">
+      <DependentUpon>frmSobre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenciar\frmGerar.resx">
+      <DependentUpon>frmGerar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenciar\frmRegistrar.resx">
+      <DependentUpon>frmRegistrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenciar\frmSobreLicenca.resx">
+      <DependentUpon>frmSobreLicenca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outras ideias\frmEntradaHorario.resx">
+      <DependentUpon>frmEntradaHorario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outras ideias\frmHoorariosCursos.resx">
+      <DependentUpon>frmHoorariosCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioFinal\frmRelatorioHorarioCurso.resx">
+      <DependentUpon>frmRelatorioHorarioCurso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioFinal\RelatorioHorarioCurso.rdlc" />
+    <EmbeddedResource Include="Relatorio\frmRelatorio.resx">
+      <DependentUpon>frmRelatorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\frmRelatorioDocente.resx">
+      <DependentUpon>frmRelatorioDocente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\ReportDocente.rdlc" />
+    <EmbeddedResource Include="Relatorio\ReportHorario.rdlc" />
+    <EmbeddedResource Include="TesteRelatorio\frmRelatorioTeste.resx">
+      <DependentUpon>frmRelatorioTeste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TesteRelatorio\ReportTeste.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Modelo\Modelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modelo.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\Modelo.edmx.diagram">
+      <DependentUpon>Modelo.edmx</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Administrador_tb.datasource" />
+    <None Include="My Project\DataSources\Ano_tb.datasource" />
+    <None Include="My Project\DataSources\Cadeira_tb.datasource" />
+    <None Include="My Project\DataSources\Criar_Horario_tb.datasource" />
+    <None Include="My Project\DataSources\Cusos_tb.datasource" />
+    <None Include="My Project\DataSources\Departamento_tb.datasource" />
+    <None Include="My Project\DataSources\Docente_tb.datasource" />
+    <None Include="My Project\DataSources\Faculdade_tb.datasource" />
+    <None Include="My Project\DataSources\frmPrincipal.datasource" />
+    <None Include="My Project\DataSources\GestHorarioEntities.datasource" />
+    <None Include="My Project\DataSources\Horario_tb.datasource" />
+    <None Include="My Project\DataSources\Horas_tb.datasource" />
+    <None Include="My Project\DataSources\Periodo_tb.datasource" />
+    <None Include="My Project\DataSources\Salas_tb.datasource" />
+    <None Include="My Project\DataSources\Semana_tb.datasource" />
+    <None Include="My Project\DataSources\sysdiagrams.datasource" />
+    <None Include="My Project\DataSources\Usuario_tb.datasource" />
+    <None Include="My Project\DataSources\View_Horario.datasource" />
+    <None Include="My Project\DataSources\View_ListaHorario.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P5lus_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mouse Right Click_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mouse Right Click1_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mouse Left Click_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Curriculum.ico" />
+    <Content Include="icons8_Source_Code.ico" />
+    <Content Include="icons8_Workflow_1.ico" />
+    <Content Include="images\img.jpg" />
+    <Content Include="images\imge.jpg" />
+    <Content Include="Modelo\Modelo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\Modelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.vb</LastGenOutput>
+    </Content>
+    <None Include="Resources\icons8_Upload_25px_2.png" />
+    <None Include="Resources\Workflow_128px1.png" />
+    <None Include="Resources\img3.png" />
+    <None Include="Resources\icons8_Work_30px.png" />
+    <None Include="Resources\icons8_User_Menu_Male_30px.png" />
+    <None Include="Resources\icons8_Save_as_25px.png" />
+    <None Include="Resources\icons8_Save_25px.png" />
+    <None Include="Resources\icons8_Password_Check_25px.png" />
+    <None Include="Resources\icons8_Password_1_25px.png" />
+    <None Include="Resources\icons8_No_Entry_25px.png" />
+    <None Include="Resources\icons8_Menu_54px.png" />
+    <None Include="Resources\icons8_Menu_30px.png" />
+    <None Include="Resources\icons8_Info_30px_3.png" />
+    <None Include="Resources\icons8_Checked_User_Male_25px_1.png" />
+    <None Include="Resources\icons8_Cancel_25px.png" />
+    <None Include="Resources\icons8_Brake_Warning_25px.png" />
+    <None Include="Resources\icons8_Autograph_30px.png" />
+    <None Include="Resources\Admin_25px.png" />
+    <None Include="Resources\Workflow_128px.png" />
+    <None Include="Resources\AddUserGroupWomanMan_25px.png" />
+    <None Include="Resources\IllustratioDesktopSGH11.png" />
+    <None Include="Resources\Info_48px1.png" />
+    <None Include="Resources\IllustratioDesktopSGH1.png" />
+    <None Include="Resources\Source Code_100px.png" />
+    <None Include="Resources\icons8_Source_Code_128.png" />
+    <None Include="Resources\Cancel_25px.png" />
+    <None Include="Resources\User Credentials_25px.png" />
+    <None Include="Resources\Key Exchange_25px.png" />
+    <None Include="Resources\Print_50px.png" />
+    <None Include="Resources\Classroom_50px.png" />
+    <None Include="Resources\Support_25px.png" />
+    <None Include="Resources\Edit File_25px.png" />
+    <None Include="Resources\HTML.png" />
+    <None Include="Resources\Dev.png" />
+    <None Include="Resources\Oopen_25px.png" />
+    <None Include="Resources\Save_25px.png" />
+    <None Include="Resources\Save as_25px.png" />
+    <None Include="Resources\Close Window_25px.png" />
+    <None Include="Resources\DoubleTick_25px1.png" />
+    <None Include="Resources\Delepte_25px.png" />
+    <None Include="Resources\Del[[ete_25px.png" />
+    <None Include="Resources\Delete Row_25px.png" />
+    <None Include="Resources\Property Time_48px.png" />
+    <None Include="Resources\Edit Property_48px.png" />
+    <None Include="Resources\Start Menu_48px.png" />
+    <None Include="Resources\banner-sistema-de-gestao-escolar.jpg" />
+    <None Include="Resources\20ucm..png" />
+    <None Include="Resources\Courses_80px.png" />
+    <None Include="Resources\Watch_100px.png" />
+    <None Include="Resources\Delete_25px.png" />
+    <None Include="Resources\DoubleTick_25px.png" />
+    <None Include="Resources\Password_25px.png" />
+    <None Include="Resources\Name_25px.png" />
+    <None Include="Resources\Enter Key_25px.png" />
+    <None Include="Resources\Minus_25px.png" />
+    <None Include="Resources\Security Checked_100px.png" />
+    <None Include="Resources\Curriculum_100px.png" />
+    <None Include="Resources\Print_25px.png" />
+    <None Include="Resources\Literature_25px.png" />
+    <None Include="Resources\Error_25px.png" />
+    <None Include="Resources\Curriculum_96px.png" />
+    <None Include="Resources\About_25px.png" />
+    <None Include="Resources\Exit Sign_25px.png" />
+    <None Include="Resources\Start Mekknu_25px.png" />
+    <None Include="Resources\Add Property_25px.png" />
+    <None Include="Resources\Create_25px.png" />
+    <None Include="Resources\Property T4ime_25px.png" />
+    <None Include="Resources\Cloc5k_25px.png" />
+    <None Include="Resources\Class_25px.png" />
+    <None Include="Resources\Classroom_25px1.png" />
+    <None Include="Resources\Clock_25px.png" />
+    <None Include="Resources\Week View_25px.png" />
+    <None Include="Resources\Course_25px.png" />
+    <None Include="Resources\Classroom_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
